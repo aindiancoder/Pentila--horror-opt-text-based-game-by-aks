@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+    </head>
+    <body>
+    <div class="border">
+<p id="story"></p>
+<div class="btns" id="bt2" onclick="opt1()">
+<h2>opt1</h2>    
+</div>
+<div class="btns" id="bt1" onclick="opt2()">
+<h2>opt2</h2>    
+</div>
+<div class="next" id="nxtline"onclick="nextline()">
+<h2 id="skip">next</h2>    
+</div> 
+<div class="last" id="nxt1"onclick="place()">
+<h2 id="place">place it</h2>    
+</div>
+<div class="button" id="nxt2" onclick="nextscn()">
+<h2 id="otxt">tell the name</h2> 
+   
+</div>
+<div class="button" id="nxt3" onclick="ending()">
+<h2 id="etxt">dont tell the name</h2> 
+   
+</div>
+</div>
+<style>
+    body { 
+background:black;
+height:100px;
+}
+#bt1 {
+    width:60px;
+    height:30px;
+    background:cyan;
+    margin:10px;
+    margin-left:3px;
+    border:2px solid black;
+    display:flex;
+    align-items:center;
+    display:none;
+    
+}
+h2 {
+    text-align:center;
+    font-family:sans-serif;
+    rgba:144,200,200;
+}
+#bt2 {
+    width:60px;
+    height:30px;
+    background:cyan;
+    margin:10px;
+    margin-left:3px;
+    border:2px solid black;
+    align-items:center;
+    display:flex;
+    display:none;
+    
+    
+}
+#story {
+    color:yellow;
+    font-family:Arial;
+    
+}
+.next {
+    width:60px;
+    height:30px;
+    background:cyan;
+}
+.last {
+    width:90px;
+    height:30px;
+    background:cyan;
+    display:none;
+}
+.button {
+    width:100px;
+    height:80px;
+    background:cyan;
+    text-color:red;
+    text-align:center;
+    display:none;
+}
+#otxt {
+    color:green;
+    font-family:Arial;
+}
+#etxt {
+    color:red;
+    font-family:Arial;
+    
+}
+.border {
+    
+    height:500px;
+    border:2px solid black;
+    
+}
+</style>
+<script >
+    function opt1() {
+    console.log("worke");
+
+}
+function opt2() {
+    console.log("worked");
+}
+const scenes = {    
+ start: {
+   text: `mr jacks daughter has recently passed away and jack miles was now in trauma ,one he got a satanic book with a note saying your wish come true`
+ },
+mid: {
+    text: `jack decided to perform ritual ,he gathred all items for ritual according to book`
+}
+ ,
+};
+window.onload = function() {
+document.getElementById("story").innerText = scenes.start.text;
+console.log("running")
+};
+function nextline() {
+ document.getElementById("story").innerText = scenes.mid.text;
+document.getElementById("nxtline").style.display="none";
+console.log("running :line24");
+document.getElementById("nxt1").style.display="block"
+}
+const ritual = {
+    start: {
+        text: `alright ,now i have to spell kal,al marie`
+    },
+};
+
+const incidents = {
+    start: {
+        text: `Jack performs The ritual Suddenly lights flickerling 
+objects starts shaking`
+ },
+ end: {
+     text: `creepy whispers starts,book glows`
+ }
+};
+function place() {
+document.getElementById("story").innerText = ritual.start.text;
+    console.log("working: line 33");
+    document.getElementById("nxt1").style.display = "none";
+setTimeout(()  => {
+ document.getElementById("story").innerText= incidents.start.text;   
+ },5000)
+ setTimeout(() => {
+ document.getElementById("story").innerText = incidents.end.text;
+ },9000)
+ setTimeout (() => {
+ document.getElementById("story").innerText= entity.start.text; }, 12040)
+setTimeout (() => {
+document.getElementById("story").innerText= entity.mid.text; console.log(" working line:45"); },16040)
+setTimeout (() => {
+console.log("working line 47:");
+document.getElementById("story").innerText= entity.end.text; },19050)
+ 
+}
+const entity = {
+    start: {
+        text: `a black shadow starts appearing on devil ring` 
+},
+ 
+mid: {
+    text: `suddenly someone whispers in jack ear saying now your wishes come true`
+},
+end: {
+    text: `jack gets frightened`
+},
+};
+
+const opts = {
+    start: { text:`the room tempereture falls downs,suddenly kal al marie appears and said "you have summoned me ,i will complete your wish but i need a soul in change",jack hesitates but nodes yes,she ask her first question "whats your main motive to summon me",and jack says"i wanted to make my daughter alive ",kal al marie gets little bit impressed,then she ask her second question "whats your daughter name"`
+ }, scene: {
+    
+      text: `jacks tells the name of his daughter to kal al marie` 
+},
+    scene2:{
+    
+    text: `jack didnt tells the name , kal al marie gets angry and kills him ,'coward ending' `   
+    }
+    
+    
+};
+console.log(entity);
+console.log(entity.start.text);
+console.log(entity === entity.end.text);
+function lastText() {
+   document.getElementById("story").innerText= opts.start.text;
+    console.log("working line 90");
+}
+
+setTimeout (() =>  {
+if( document.getElementById("story").innerText=entity.end.text) {
+    document.getElementById("nxt2").style.display="block";
+    
+    document.getElementById("nxt3").style.display="block";
+lastText();  
+    
+} else {
+    console.log("nothing to show");
+} 
+},30000);
+function ending() {
+ document.getElementById("story").innerText= opts.scene2.text; 
+document.getElementById("nxt2").style.display="none";
+document.getElementById("nxt3").style.display="none";
+document.getElementById("story").style.color="red";
+setTimeout(() => {
+Greet();
+},20000);
+}    
+
+const greet = {
+    start: {
+        text: `pentila made by aks ,thanks for playing`
+    },
+};
+function Greet() {
+console.log("line onboard 111 working");  document.getElementById("story").innerText = greet.start.text;
+document.getElementById("story").style.display="block";
+document.getElementById("story").style.color="blue";
+}
+
+
+</script>
+       
+    </body>
+</html>
